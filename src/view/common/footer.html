@@ -8,7 +8,10 @@
 		if ( (is_administrator() && (basename($_SERVER['PHP_SELF']) != 'logout.php')) OR (isset($loggedin) &&  $loggedin) ) {
 
 			// Create the links
-			print '<p class="lead"><a href="logout.php" class="btn btn-default">Logout</a></p>';
+			print '<p class="lead"><a href="logout.php" class="btn btn-default">Logout</a> ';
+			print '<a href="../../src/" class="btn btn-default">Home</a></p>';
+		} else { // Return to Home
+			print '<p class="lead"><a href="../../src/" class="btn btn-default">Home</a></p>';
 		}
 
 		?>

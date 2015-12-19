@@ -4,6 +4,7 @@
 $loggedin = false;
 $error = false;
 
+
 // Check if the form has been submitted:
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -38,9 +39,15 @@ if ($error) {
 	\t\t<p>" . $error. '</p></div>';
 }
 
+if ( (is_administrator() && (basename($_SERVER['PHP_SELF']) != 'logout.php')) OR (isset($loggedin) &&  $loggedin) ) {
+
+	$loggedin = true;
+
+}
+
 // Indicate the user is logged in, or show the form:
 if ($loggedin) {
-	print '<p>You are now logged in!</p>';
+	print '<p class="lead">You are now logged in!</p>';
 } else {
 	print '<div class="form-group">';
 	print '
