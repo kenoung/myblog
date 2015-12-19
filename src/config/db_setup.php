@@ -91,8 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		</div>
 	<?php } 
 
-	// Add footer
-	include('../view/common/footer.html');
+	print "<p>Return to <a href=\"../view/home.php\">home</a>.</p>"
 
 	?>
 </body>
