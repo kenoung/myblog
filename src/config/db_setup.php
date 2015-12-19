@@ -82,12 +82,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 } else { // Display form
 
 	?>
-	<form action="db_setup.php" method="post">
-		<p>Hostname: <input type="text" name="hostname" /></p>
-		<p>Username: <input type="text" name="user" /></p>
-		<p>Password: <input type="password" name="password" /></p>
-		<button type="submit" name="submit">Log in to database</button>
-
+	<form role="form" action="db_setup.php" method="post">
+		<div class="form-group">
+			<p>Hostname: <input type="text" name="hostname" /></p>
+			<p>Username: <input type="text" name="user" /></p>
+			<p>Password: <input type="password" name="password" /></p>
+			<button type="submit" class="btn btn-default" name="submit">Log in to database</button>
+		</div>
 	<?php } 
 
 	// Add footer

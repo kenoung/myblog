@@ -1,5 +1,4 @@
 	<footer class="container-fluid text-center">
-		<p>
 		<?php // Code taken from Larry Ullman's "PHP for the Web"
 
 		// Display general admin links...
@@ -9,9 +8,14 @@
 
 			// Create the links
 			print '<p class="lead"><a href="logout.php" class="btn btn-default">Logout</a> ';
-			print '<a href="../../src/" class="btn btn-default">Home</a></p>';
-		} else { // Return to Home
-			print '<p class="lead"><a href="../../src/" class="btn btn-default">Home</a></p>';
+			print '<a href="home.php" class="btn btn-default">Home</a></p>';
+		} elseif (basename($_SERVER['PHP_SELF']) == 'login.php') { // On log in page
+
+			print '<p class="lead"><a href="home.php" class="btn btn-default">Home</a></p>';
+		} else {
+
+			print '<p class="lead"><a href="login.php" class="btn btn-default">Log In</a> ';
+			print '<a href="home.php" class="btn btn-default">Home</a></p>';
 		}
 
 		?>
