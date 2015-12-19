@@ -14,10 +14,10 @@
 - <del>files to create db</del> done
 - <del>cover page</del> done
 - <del>login/logout</del> done
-- home (view_posts) NOT DONE
-- add_posts NOT DONE
-- delete_posts NOT DONE
-- edit_posts NOT DONE
+- <del>home (view_posts)</del> done
+- <del>add_posts</del> done
+- <del>delete_posts</del> done
+- <del>edit_posts</del> done
 - touch up site design NOT DONE
 - allow for more user accounts/registration page NOT DONE
 - implement categories NOT DONE
