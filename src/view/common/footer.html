@@ -1,3 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+	<footer class="container-fluid text-center">
+		<p>
+		<?php // Code taken from Larry Ullman's "PHP for the Web"
+
+		// Display general admin links...
+		// - if the user is an administrator and it's not the logout.php page
+		// - or if the $loggedin variable is trye (i.e., the user just logged in)
+		if ( (is_administrator() && (basename($_SERVER['PHP_SELF']) != 'logout.php')) OR (isset($loggedin) &&  $loggedin) ) {
+
+			// Create the links
+			print '<p class="lead"><a href="logout.php" class="btn btn-default">Logout</a></p>';
+		}
+
+		?>
+	</footer>
+
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+</body>
+</html>
