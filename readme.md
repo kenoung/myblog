@@ -20,3 +20,5 @@
 - edit_posts NOT DONE
 - touch up site design NOT DONE
 - allow for more user accounts/registration page NOT DONE
+- 
+- paragraphing currently not supported
