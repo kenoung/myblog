@@ -18,7 +18,7 @@
 - <del>add_posts</del> done
 - <del>delete_posts</del> done
 - <del>edit_posts</del> done
-- touch up site design NOT DONE
+- <del>touch up site design</del> NOT DONE
 - allow for more user accounts/registration page NOT DONE
 - implement categories NOT DONE
 - paragraphing currently not supported
