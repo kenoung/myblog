@@ -10,7 +10,9 @@ define('TITLE', 'Logout');
 include('common/header.html');
 
 // Print a message:
-print '<p class="lead">You are now logged out.</p>';
+print '<div class="well">
+<p class="lead">You are now logged out.</p>
+</div>';
 
 // Include the footer:
 include('common/footer.html');

@@ -47,7 +47,9 @@ if ( (is_administrator() && (basename($_SERVER['PHP_SELF']) != 'logout.php')) OR
 
 // Indicate the user is logged in, or show the form:
 if ($loggedin) {
-	print '<p class="lead">You are now logged in!</p>';
+	print '<div class="well">
+	<p class="lead">You are now logged in!</p>
+	</div>';
 } else {
 	print '<div class="form-group">';
 	print '

@@ -42,7 +42,7 @@ if (isset($_GET['post_id']) && is_numeric($_GET['post_id']) && ($_GET['post_id']
 			<div class="form-group">
 				<p><h3>Title</h3> <input type="text" name="title" class="form-control" value="' . htmlentities($row['title']) . '"></p>
 				<p><h3>Post</h3> <textarea name="post" class="form-control" rows="10">' . htmlentities($row['post']) . '</textarea></p>
-				<p><button type="submit" name="submit">Update this Quote!</button></p>
+				<hr><p class="text-center"><button type="submit" class="btn btn-warning" name="submit">Update this Quote!</button></p>
 				<input type="hidden" name="post_id" value="' . $_GET['post_id'] . '" />
 		</form>';
 

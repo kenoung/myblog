@@ -10,7 +10,8 @@ include("../helpers/utils.php");
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width-device-width, initial-scale=1">
-	<link rel="stylesheet" href="../static/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="../static/css/bg.css" rel="stylesheet">
 	<title>
 	<?php // Print the page title.
 	if (defined('TITLE')) {
@@ -23,7 +24,43 @@ include("../helpers/utils.php");
 </head>
 <body>
 	<div class="container">
-		<div class="jumbotron">
-			<h1><strong>Blog Assignment</strong></h1>
+		<div class="page-header text-center">
+			<h1 id="head">Blog Assignment</h1>
+			<p>CVWO Assignment 1. View github repo for this project <a href="https://github.com/kenoung/myblog">here</a>.</p>
 		</div>
-		<br>
+		<nav class="navbar navbar-inverse">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href=".."><strong>Cover</strong></a>
+				</div>
+				<div>
+					<ul class="nav navbar-nav navbar-right">
+
+						<li><a href="home.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+						<?php // Change link depending on log-in status
+
+						if ( (is_administrator() && (basename($_SERVER['PHP_SELF']) != 'logout.php')) OR (isset($loggedin) &&  $loggedin) ) {
+
+							// Allow add post
+
+							print '<li><a href="add_post.php"><span class="glyphicon glyphicon-pencil"></span> Add Post</a></li>';
+
+							// Allow log out
+							print "\n\t\t\t\t\t\t".'<li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>'."\n";
+
+						} else {
+
+							// Allow sign-up
+							print '<li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>';
+
+							// Allow log in 
+							print "\n\t\t\t\t\t\t".'<li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>'."\n";
+						}
+
+						?>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+
