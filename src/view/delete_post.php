@@ -26,7 +26,7 @@ include("../config/mysql_connect.php");
 
 if (isset($_GET['post_id']) && is_numeric($_GET['post_id']) && ($_GET['post_id'] > 0)) { // Display entry in a form
 
-	print '<div class="alert alert-warning"><p>Are you sure you want to <strong>delete</strong> this blog post? </p></div>';
+	print '<div class="alert alert-warning"><p>Are you sure you want to <strong>delete</strong> this blog post? Click <a href="home.php">here</a> to return home instead.</p> </div>';
 
 	// Define the query.
 	$query = "SELECT title, post FROM blog_post WHERE post_id={$_GET['post_id']}";
@@ -35,7 +35,7 @@ if (isset($_GET['post_id']) && is_numeric($_GET['post_id']) && ($_GET['post_id']
 
 		// Make the form:
 		print '<form role="form" action="delete_post.php" method="post">
-			<div class="form-group">
+			<div class="well form-group blog-post">
 				<p><h3>Title</h3> <input type="text" name="title" class="form-control" value="' . htmlentities($row['title']) . '"></p>
 				<p><h3>Post</h3> <textarea name="post" class="form-control" rows="10">' . htmlentities($row['post']) . '</textarea></p>
 				<hr><p class="text-center"><button type="submit" class="btn btn-danger" name="submit">DELETE!</button></p>
