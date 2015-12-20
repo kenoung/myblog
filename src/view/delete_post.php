@@ -26,7 +26,7 @@ include("../config/mysql_connect.php");
 
 if (isset($_GET['post_id']) && is_numeric($_GET['post_id']) && ($_GET['post_id'] > 0)) { // Display entry in a form
 
-	print '<div class="alert alert-warning">Are you sure you want to <strong>delete</strong> this blog post?</div>';
+	print '<div class="alert alert-warning"><p>Are you sure you want to <strong>delete</strong> this blog post? </p></div>';
 
 	// Define the query.
 	$query = "SELECT title, post FROM blog_post WHERE post_id={$_GET['post_id']}";
@@ -38,7 +38,7 @@ if (isset($_GET['post_id']) && is_numeric($_GET['post_id']) && ($_GET['post_id']
 			<div class="form-group">
 				<p><h3>Title</h3> <input type="text" name="title" class="form-control" value="' . htmlentities($row['title']) . '"></p>
 				<p><h3>Post</h3> <textarea name="post" class="form-control" rows="10">' . htmlentities($row['post']) . '</textarea></p>
-				<hr><p class="text-center"><button type="submit" class="btn btn-danger" name="submit">DELETE this Quote!</button></p>
+				<hr><p class="text-center"><button type="submit" class="btn btn-danger" name="submit">DELETE!</button></p>
 				<input type="hidden" name="post_id" value="' . $_GET['post_id'] . '" />
 		</form>';
 
@@ -58,7 +58,7 @@ if (isset($_GET['post_id']) && is_numeric($_GET['post_id']) && ($_GET['post_id']
 	// Report on the result:
 	if (mysqli_affected_rows($dbc) == 1) {
 
-		print '<p>Your blog post has been deleted.</p>';
+		print '<div class="alert alert-success"><p>Your blog post has been deleted. Return <a href="home.php">home</a> to see your changes.</p></div>';
 	
 	} else {
 

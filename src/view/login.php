@@ -47,8 +47,10 @@ if ( (is_administrator() && (basename($_SERVER['PHP_SELF']) != 'logout.php')) OR
 
 // Indicate the user is logged in, or show the form:
 if ($loggedin) {
-	print '<div class="well">
-	<p class="lead">You are now logged in!</p>
+	print '<div class="well text-center">
+	<h2>You are now logged in!</h2>
+	<br>
+	<p class="lead">You can view, edit or delete posts from the <a href="home.php">home page</a> or add a new post <a href="add_post.php">here</a>.</p>
 	</div>';
 } else {
 	print '<div class="form-group">';

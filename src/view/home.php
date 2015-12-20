@@ -11,9 +11,10 @@ include('common/header.html');
 // Allow authors to add post
 if (is_administrator()) {
 	print '
-	<div class="well">
-	<a href="add_post.php" class="btn btn-default">Add A Post Here!</a> </p>
-	</div>';
+	<div class="well blog-post">
+	<a href="add_post.php" class="btn btn-success">Add A Post Here!</a> </p>
+	</div>
+	';
 }
 
 
@@ -30,16 +31,21 @@ if ($r = mysqli_query($dbc,$query)) {
 	while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
 
 		// print the record:
-		print "<div class=\"well\">
-		<p class=\"lead\">{$row['title']}</p>
-		<p>posted {$row['date_entered']}</p>
-		<blockquote>{$row['post']}</blockquote>
+		print "<div class=\"well\"   id=\"{$row['post_id']}\">
+
+		<div class=\"text-center post-title\">
+		<h2><strong>".htmlentities($row['title'])."</strong></h2>
+		posted {$row['date_entered']}
+		</div>
+
+		<p class=\"text-justify blog-post\">".nl2br(htmlentities($row['post']))."</p>
 		\n";
 
 
 		// allow authors to edit/delete blog posts
 		if (is_administrator()) {
-			print "<div class=\"btn-group\">
+			print "
+			<div class=\"btn-group\">
 			<a href=\"edit_post.php?post_id={$row['post_id']}\" class=\"btn btn-default\">Edit</a> 
 			<a href=\"delete_post.php?post_id={$row['post_id']}\" class=\"btn btn-default\">Delete</a>
 			</div>

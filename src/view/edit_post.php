@@ -39,9 +39,9 @@ if (isset($_GET['post_id']) && is_numeric($_GET['post_id']) && ($_GET['post_id']
 
 		// Make the form:
 		print '<form role="form" action="edit_post.php" method="post">
-			<div class="form-group">
-				<p><h3>Title</h3> <input type="text" name="title" class="form-control" value="' . htmlentities($row['title']) . '"></p>
-				<p><h3>Post</h3> <textarea name="post" class="form-control" rows="10">' . htmlentities($row['post']) . '</textarea></p>
+			<div class="well form-group blog-post">
+				<p><h3>Title</h3> <input type="text" name="title" class="form-control" value="' . htmlentities($row['title']) . '" autofocus required></p>
+				<p><h3>Post</h3> <textarea name="post" class="form-control" rows="10" required>' . htmlentities($row['post']) . '</textarea></p>
 				<hr><p class="text-center"><button type="submit" class="btn btn-warning" name="submit">Update this Quote!</button></p>
 				<input type="hidden" name="post_id" value="' . $_GET['post_id'] . '" />
 		</form>';
@@ -73,7 +73,17 @@ if (isset($_GET['post_id']) && is_numeric($_GET['post_id']) && ($_GET['post_id']
 		// Define the query
 		$query = "UPDATE blog_post SET title='$title', post='$post' WHERE post_id={$_POST['post_id']}";
 		if ($r = mysqli_query($dbc, $query)) {
-			print '<p>Your blog post has been updated.</p>';
+			print '<div class="alert alert-success"><p>Your blog post has been updated. Return <a href="home.php'."#{$_POST['post_id']}".'">home</a> to see your changes.</p></div>';
+
+			// Make the form:
+			print '<form role="form" action="edit_post.php" method="post">
+			<div class="well form-group blog-post">
+				<p><h3>Title</h3> <input type="text" name="title" class="form-control" value="' . htmlentities($title) . '" autofocus required></p>
+				<p><h3>Post</h3> <textarea name="post" class="form-control" rows="10" required>' . htmlentities($post) . '</textarea></p>
+				<hr><p class="text-center"><button type="submit" class="btn btn-warning" name="submit">Update this Quote!</button></p>
+				<input type="hidden" name="post_id" value="' . $_POST['post_id'] . '" />
+		</form>';
+
 		} else {
 			print '<div class="alert alert-danger"><p>Could not update the quotation because:<br />' . mysql_error($dbc) . '.</p>
 			<p>The query could not run because:<br />' . mysql_error($dbc) . '.</p>
