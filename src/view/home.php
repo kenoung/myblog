@@ -38,7 +38,7 @@ if ($r = mysqli_query($dbc,$query)) {
 		posted {$row['date_entered']}
 		</div>
 
-		<p class=\"text-justify blog-post\">".nl2br(htmlentities($row['post']))."</p>
+		<div class=\"blog-post\">".base64_decode($row['post'])."</div>
 		\n";
 
 

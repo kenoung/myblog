@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // Handle the form
 
 		// Prepare the values for storing
 		$title = mysqli_real_escape_string($dbc, trim(strip_tags($_POST['title'])));
-		$post = mysqli_real_escape_string($dbc, trim(strip_tags($_POST['post'])));
+		$post = mysqli_real_escape_string($dbc, base64_encode($_POST['post']));
 
 		$query = "INSERT INTO blog_post (title, post) VALUES ('$title', '$post')";
 		$r = mysqli_query($dbc, $query);
@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // Handle the form
 		<form role="form" action="add_post.php" method="post">
 			<div class="well form-group blog-post">
 				<p><h3>Title</h3> <input type="text" name="title" class="form-control" required autofocus></p>
-				<p><h3>Post</h3> <textarea name="post" class="form-control" rows="10" required></textarea></p>
+				<p><h3>Post</h3> <textarea name="post" class="form-control ckeditor" rows="10"></textarea></p>
 				<hr>
 				<p class="text-center"><button type="submit" class="btn btn-success" name="submit">Post!</button></p>
 

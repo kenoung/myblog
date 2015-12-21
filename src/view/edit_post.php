@@ -41,7 +41,7 @@ if (isset($_GET['post_id']) && is_numeric($_GET['post_id']) && ($_GET['post_id']
 		print '<form role="form" action="edit_post.php" method="post">
 			<div class="well form-group blog-post">
 				<p><h3>Title</h3> <input type="text" name="title" class="form-control" value="' . htmlentities($row['title']) . '" autofocus required></p>
-				<p><h3>Post</h3> <textarea name="post" class="form-control" rows="10" required>' . htmlentities($row['post']) . '</textarea></p>
+				<p><h3>Post</h3> <textarea name="post" class="form-control ckeditor" rows="10" required>' . base64_decode($row['post']) . '</textarea></p>
 				<hr><p class="text-center"><button type="submit" class="btn btn-warning" name="submit">Update this Quote!</button></p>
 				<input type="hidden" name="post_id" value="' . $_GET['post_id'] . '" />
 		</form>';
@@ -61,7 +61,7 @@ if (isset($_GET['post_id']) && is_numeric($_GET['post_id']) && ($_GET['post_id']
 
 		// prepare the values for storing:
 		$title = mysqli_real_escape_string($dbc, trim(strip_tags($_POST['title'])));
-		$post = mysqli_real_escape_string($dbc, trim(strip_tags($_POST['post'])));
+		$post = mysqli_real_escape_string($dbc, base64_encode($_POST['post']));
 
 	} else {
 		print '<div class="alert alert-danger"><p>Please make sure you have filled out all the fields.</p></div>';
@@ -79,7 +79,7 @@ if (isset($_GET['post_id']) && is_numeric($_GET['post_id']) && ($_GET['post_id']
 			print '<form role="form" action="edit_post.php" method="post">
 			<div class="well form-group blog-post">
 				<p><h3>Title</h3> <input type="text" name="title" class="form-control" value="' . htmlentities($title) . '" autofocus required></p>
-				<p><h3>Post</h3> <textarea name="post" class="form-control" rows="10" required>' . htmlentities($post) . '</textarea></p>
+				<p><h3>Post</h3> <textarea name="post" class="form-control ckeditor" rows="10" required>' . base64_decode($post) . '</textarea></p>
 				<hr><p class="text-center"><button type="submit" class="btn btn-warning" name="submit">Update this Quote!</button></p>
 				<input type="hidden" name="post_id" value="' . $_POST['post_id'] . '" />
 		</form>';
