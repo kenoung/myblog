@@ -37,7 +37,7 @@ if (isset($_GET['post_id']) && is_numeric($_GET['post_id']) && ($_GET['post_id']
 		print '<form role="form" action="delete_post.php" method="post">
 			<div class="well form-group blog-post">
 				<p><h3>Title</h3> <input type="text" name="title" class="form-control" value="' . htmlentities($row['title']) . '"></p>
-				<p><h3>Post</h3> <textarea name="post" class="form-control" rows="10">' . htmlentities($row['post']) . '</textarea></p>
+				<p><h3>Post</h3> <textarea name="post" class="form-control" rows="10">' . base64_decode($row['post']) . '</textarea></p>
 				<hr><p class="text-center"><button type="submit" class="btn btn-danger" name="submit">DELETE!</button></p>
 				<input type="hidden" name="post_id" value="' . $_GET['post_id'] . '" />
 		</form>';
