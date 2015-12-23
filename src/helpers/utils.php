@@ -31,13 +31,6 @@ function check_access($name = NULL, $value = NULL) {
 ## Blog Post Form ##
 ####################
 
-function defining($item, $definition) {
-	// Define an item only if not yet defined
-	if (!defined($item)) {
-		DEFINE($item, $definition);
-	}
-}
-
 function handle_bp ($action) {
 	/* This script handles blog post form based on whether $action is:
 	- 'add'
