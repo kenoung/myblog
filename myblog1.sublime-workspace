@@ -1,0 +1,480 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"validation",
+				"validation_type"
+			],
+			[
+				"error",
+				"error_msg"
+			],
+			[
+				"bas",
+				"base64_encode"
+			],
+			[
+				"base",
+				"base64_decode"
+			],
+			[
+				"mysql",
+				"mysql_connect"
+			],
+			[
+				"quote",
+				"quote"
+			],
+			[
+				"email",
+				"email"
+			],
+			[
+				"words_",
+				"words_string"
+			],
+			[
+				"numb",
+				"number_format"
+			],
+			[
+				"read",
+				"readLine"
+			],
+			[
+				"c",
+				"c"
+			],
+			[
+				"index",
+				"index"
+			],
+			[
+				"possible",
+				"possible_birthdays"
+			],
+			[
+				"sta",
+				"statement1"
+			],
+			[
+				"un",
+				"unique_date"
+			],
+			[
+				"cont",
+				"contains_unique"
+			],
+			[
+				"unique",
+				"unique_month"
+			],
+			[
+				"possibl",
+				"possible_birthdays"
+			],
+			[
+				"convert",
+				"convert_to_decimal"
+			],
+			[
+				"stack",
+				"stack_frac"
+			],
+			[
+				"d",
+				"def	Function"
+			],
+			[
+				"a",
+				"a"
+			],
+			[
+				"b",
+				"b"
+			],
+			[
+				"lower",
+				"lower_bound"
+			],
+			[
+				"upper",
+				"upper_bound"
+			],
+			[
+				"lowe",
+				"lower_bound"
+			],
+			[
+				"hypo",
+				"hypotenuse"
+			],
+			[
+				"mutable",
+				"mutable_link"
+			],
+			[
+				"part",
+				"partition_tree"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "src/view/common/header.html",
+			"settings":
+			{
+				"buffer_size": 2012,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/view/home.php",
+			"settings":
+			{
+				"buffer_size": 1700,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/xampp/htdocs/myblog1/Write Up.pdf",
+		"/C/xampp/htdocs/myblog1/Write Up.docx",
+		"/C/xampp/htdocs/myblog1/src/view/login.php",
+		"/C/xampp/htdocs/phpmysql/chap2/form.html",
+		"/C/xampp/htdocs/phpmysql/chap2/form.php",
+		"/C/xampp/htdocs/drupal/sites/default/modules/first/first.info",
+		"/C/xampp/htdocs/drupal/sites/default/modules/first/first.module",
+		"/C/xampp/htdocs/drupal/sites/default/modules/first/first.test",
+		"/C/xampp/htdocs/drupal/sites/all/modules/drupal7_common_modules/drupal7_common_modules/helloworld_d7/helloworld_d7.module",
+		"/C/xampp/htdocs/drupal/sites/all/modules/drupal7_common_modules/drupal7_common_modules/helloworld_d7/helloworld_d7_form.inc",
+		"/C/xampp/htdocs/drupal/sites/all/modules/drupal7_common_modules/drupal7_common_modules/helloworld_d7/helloworld_d7_massAdd.inc",
+		"/C/xampp/htdocs/drupal/sites/all/modules/drupal7_common_modules/drupal7_common_modules/helloworld_d7/helloworld_d7_api.inc",
+		"/C/Users/Ken/Documents/GitHub/drupal_assignment2/README.md",
+		"/C/xampp/htdocs/drupal/sites/all/modules/drupal7_common_modules/drupal7_common_modules/patches/drupal_includes_registry.inc.diff",
+		"/C/xampp/htdocs/myblog1/readme.md",
+		"/C/xampp/htdocs/drupal/sites/all/modules/drupal7_common_modules/drupal7_common_modules/helloworld_d7/helloworld_d7_constants.php",
+		"/C/xampp/htdocs/drupal/sites/all/modules/drupal7_common_modules/drupal7_common_modules/helloworld_d7/helloworld_d7.info",
+		"/C/xampp/php/php.ini",
+		"/C/xampp/htdocs/drupal/sites/all/modules/custom/annotate/annotate.info",
+		"/C/xampp/htdocs/drupal/sites/all/modules/custom/annotate/annotate.admin.inc",
+		"/C/xampp/htdocs/drupal/sites/all/modules/custom/annotate/annotate.module",
+		"/C/Users/Ken/AppData/Roaming/Sublime Text 2/Packages/User/Plain text.sublime-settings",
+		"/C/xampp/htdocs/myblog1/src/helpers/utils.php",
+		"/C/Users/Ken/Downloads/drupal7_common_modules/drupal7_common_modules/helloworld_d7/helloworld_d7_api.inc",
+		"/C/xampp/htdocs/myblog1/src/view/delete_post.php",
+		"/C/xampp/htdocs/myblog1/src/view/edit_post.php",
+		"/C/xampp/htdocs/myblog1/src/view/add_post.php",
+		"/C/Users/Ken/Downloads/drupal7_common_modules/drupal7_common_modules/helloworld_d7/helloworld_d7.module",
+		"/C/Users/Ken/Downloads/drupal7_common_modules/drupal7_common_modules/helloworld_d7/helloworld_d7.info",
+		"/C/xampp/htdocs/drupal/sites/default/settings.php",
+		"/C/xampp/htdocs/drupal/sites/default/default.settings.php",
+		"/C/xampp/htdocs/myblog1/src/config/mysql_connect.php",
+		"/C/xampp/htdocs/myblog1/src/view/common/footer.html",
+		"/C/xampp/htdocs/myblog1/src/view/common/header.html",
+		"/C/Users/Ken/Desktop/bootstrap-3.3.6/README.md",
+		"/C/xampp/htdocs/phpmysql/chap2/handle_form.php",
+		"/C/xampp/htdocs/phpmysql/chap2/sorting.php",
+		"/C/xampp/htdocs/myblog1/src/view/home.php",
+		"/C/xampp/htdocs/myblog1/src/static/css/bg.css",
+		"/C/xampp/htdocs/webhost/src/config/create_table.php",
+		"/C/xampp/htdocs/webhost/src/config/mysql_connect.php",
+		"/C/xampp/htdocs/webhost/src/view/common/header.html",
+		"/C/xampp/htdocs/webhost/src/config/db_setup.php",
+		"/C/xampp/htdocs/webhost/src/config/config.php",
+		"/C/xampp/htdocs/webhost/src/view/edit_post.php",
+		"/C/xampp/htdocs/webhost/src/view/home.php",
+		"/C/xampp/htdocs/myblog1/src/config/db_setup.php",
+		"/C/xampp/htdocs/demo/chap13/edit_quote.php",
+		"/C/xampp/htdocs/demo/chap13/add_quote.php",
+		"/C/xampp/htdocs/myblog1/src/config/create_table.php",
+		"/C/xampp/htdocs/demo/chap13/view_quotes.php",
+		"/C/xampp/htdocs/myblog1/src/config/config.php",
+		"/C/xampp/htdocs/myblog1/src/view/logout.php",
+		"/C/xampp/htdocs/demo/chap13/create_db.php",
+		"/C/xampp/htdocs/demo/chap12/create_table.php",
+		"/C/xampp/htdocs/demo/chap12/edit_entry.php",
+		"/C/xampp/htdocs/demo/chap13/logout.php",
+		"/C/xampp/htdocs/demo/chap13/includes/functions.php",
+		"/C/xampp/htdocs/myblog1/src/index.php",
+		"/C/xampp/htdocs/demo/chap13/login.php",
+		"/C/xampp/htdocs/cover/login/login.html",
+		"/C/xampp/htdocs/demo/chap13/mysql_connect.php",
+		"/C/xampp/htdocs/demo/chap13/templates/footer.html",
+		"/C/xampp/htdocs/demo/chap12/header.html",
+		"/C/xampp/htdocs/cover/cover.css",
+		"/C/xampp/htdocs/demo/chap12/view_entries.php",
+		"/C/xampp/htdocs/demo/header.html",
+		"/C/xampp/htdocs/demo/chap12/functions.php",
+		"/C/xampp/htdocs/demo/chap12/footer.html",
+		"/C/xampp/htdocs/demo/chap12/login.php",
+		"/C/xampp/htdocs/demo/chap13/create_table.php",
+		"/C/xampp/htdocs/demo/chap13/setup.php",
+		"/C/xampp/htdocs/demo/chap11/login.php",
+		"/C/xampp/htdocs/demo/chap12/create_db.php",
+		"/C/xampp/htdocs/demo/chap12/add_entry.php",
+		"/C/xampp/htdocs/demo/chap12/delete_entry.php",
+		"/C/xampp/phpMyAdmin/config.inc.php",
+		"/C/xampp/htdocs/cover/login/logout.php",
+		"/C/xampp/htdocs/cover/login/index.php",
+		"/C/xampp/htdocs/cover/templates/header.html",
+		"/C/xampp/htdocs/cover/templates/footer.html",
+		"/C/xampp/htdocs/cover/index.php",
+		"/C/xampp/htdocs/cover/login/footer.html",
+		"/C/xampp/htdocs/cover/login/header.html",
+		"/C/xampp/htdocs/demo/chap11/add_quote.php",
+		"/C/xampp/htdocs/demo/chap11/register.php",
+		"/C/xampp/htdocs/demo/chap10/menus1.php",
+		"/C/xampp/htdocs/demo/chap8/templates/header.html",
+		"/C/xampp/htdocs/demo/chap10/calculator.php",
+		"/C/xampp/htdocs/demo/chap11/quotes.txt",
+		"/C/xampp/htdocs/demo/chap11/view_quote.php",
+		"/C/xampp/htdocs/demo/chap11/upload_file.php",
+		"/C/xampp/htdocs/demo/chap11/list_dir.php",
+		"/C/xampp/htdocs/demo/users/users.txt",
+		"/C/xampp/htdocs/demo/chap8/logout.php",
+		"/C/xampp/htdocs/demo/chap8/welcome.php",
+		"/C/xampp/htdocs/demo/chap8/login.php",
+		"/C/xampp/htdocs/demo/chap9/reset.php",
+		"/C/xampp/htdocs/demo/chap9/view_settings.php",
+		"/C/xampp/htdocs/demo/chap9/customize.php",
+		"/C/xampp/htdocs/cover/login/signin.css",
+		"/C/xampp/htdocs/cover/login/index.html",
+		"/C/xampp/htdocs/cover/index.html",
+		"/C/xampp/htdocs/demo/chap8/templates/footer.html",
+		"/C/xampp/htdocs/demo/chap8/register.php",
+		"/C/xampp/htdocs/demo/chap8/header.html",
+		"/C/Users/Ken/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/C/xampp/htdocs/demo/chap8/layout.html",
+		"/C/xampp/htdocs/demo/chap8/albums.php",
+		"/C/xampp/htdocs/demo/chap8/index.php",
+		"/C/xampp/htdocs/demo/chap8/footer.html",
+		"/C/xampp/htdocs/demo/chap7/event.php",
+		"/C/xampp/htdocs/demo/chap7/handle_event.php",
+		"/C/xampp/htdocs/demo/chap7/list.html",
+		"/C/xampp/htdocs/demo/chap7/handle_list.php",
+		"/C/xampp/htdocs/demo/chap7/soups3.php",
+		"/C/xampp/htdocs/demo/chap7/books.php",
+		"/C/xampp/htdocs/demo/chap7/sort.php",
+		"/C/xampp/htdocs/demo/chap6/handle_reg.php",
+		"/C/xampp/htdocs/demo/chap6/register.php",
+		"/C/xampp/htdocs/demo/chap7/soups1.php",
+		"/C/xampp/htdocs/demo/chap5/handle_reg.php",
+		"/C/xampp/htdocs/demo/chap5/registration.html",
+		"/C/xampp/htdocs/demo/chap5/thanks.php",
+		"/C/xampp/htdocs/demo/chap5/handle_post.php",
+		"/C/xampp/htdocs/demo/chap5/posting.html",
+		"/C/xampp/htdocs/demo/chap4/random.php",
+		"/C/xampp/htdocs/demo/chap3/hello.php"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"add_user",
+			"page_mode",
+			"zend_ex",
+			"zend",
+			"xde",
+			"schema",
+			"<?",
+			"help you",
+			"textarea ",
+			"textarea name=\"post\" class=\"form-control\"",
+			"textarea",
+			"textarea name=\"post\" class=\"form-control\"",
+			"textarea",
+			"	// <script>tinymce.init({\n	//  selector:'textarea' \n	 \n	// });</script>",
+			"alert-danger",
+			"alert-",
+			"heading",
+			"alakazam",
+			"kadabra",
+			"abra",
+			"BEGIN:VEVENT",
+			"END:VEVENT"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"textarea name=\"post\" class=\"form-control ckeditor\"",
+			"BEGIN:VEVENT\\nSTATUS:CANCELLED",
+			"STATUS:CANCELLED\\nEND:VEVENT"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "src/view/common/header.html",
+					"settings":
+					{
+						"buffer_size": 2012,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								323,
+								323
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/view/home.php",
+					"settings":
+					{
+						"buffer_size": 1700,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								90,
+								90
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 124.0
+	},
+	"replace":
+	{
+		"height": 82.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/C/xampp/htdocs/phpmysql/phpmysql.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}
