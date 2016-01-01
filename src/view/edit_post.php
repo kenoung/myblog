@@ -15,8 +15,17 @@ include('common/header.html');
 
 // print '<h2>Edit a Post</h2>';
 
-// Must sign in for access:
-check_access('School', 'Computing');
+// Restrict access to administrators only:
+if (!is_administrator()) {
+
+	print '<h2>Access Denied!</h2>
+	<div class="alert alert-danger">
+	<p>You do not have permission to access this page.</p>
+	</div>';
+	include('common/footer.html');
+	exit();
+
+}
 
 // Connect to database
 include("../config/mysql_connect.php");
