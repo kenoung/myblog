@@ -39,7 +39,7 @@ if ($error) {
 	\t\t<p>" . $error. '</p></div>';
 }
 
-if ( (is_administrator() && (basename($_SERVER['PHP_SELF']) != 'logout.php')) OR (isset($loggedin) &&  $loggedin) ) {
+if (is_administrator()) {
 
 	$loggedin = true;
 

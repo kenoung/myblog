@@ -31,11 +31,23 @@ function check_access($name = NULL, $value = NULL) {
 ## Blog Post Form ##
 ####################
 
-function defining($item, $definition) {
-	// Define an item only if not yet defined
-	if (!defined($item)) {
-		DEFINE($item, $definition);
+function validate_exists_error($var_array) {
+	/*
+	 * Returns an error if any variable in $var_array does not exist.
+	 *
+	 * All variables are assumed to be found in the $_POST array.
+	 */
+
+	$error = ""; // Initialize error message
+
+	foreach($var_array as $var) {
+		if (isset($_POST[$var]) AND empty($_POST[$var])) {
+			$error .= "<p>$var has not been set.</p>";
+		}
 	}
+
+	return $error;
+
 }
 
 function handle_bp ($action) {
