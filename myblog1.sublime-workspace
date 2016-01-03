@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"alert",
+				"alert-warning"
+			],
+			[
+				"password",
+				"password_hash"
+			],
+			[
 				"php",
 				"php"
 			],
@@ -131,15 +139,7 @@
 			"file": "src/view/home.php",
 			"settings":
 			{
-				"buffer_size": 1700,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/config/create_table.php",
-			"settings":
-			{
-				"buffer_size": 1990,
+				"buffer_size": 1869,
 				"line_ending": "Windows"
 			}
 		},
@@ -147,7 +147,31 @@
 			"file": "src/view/register.php",
 			"settings":
 			{
-				"buffer_size": 3903,
+				"buffer_size": 4650,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/view/login.php",
+			"settings":
+			{
+				"buffer_size": 3218,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/view/common/header.html",
+			"settings":
+			{
+				"buffer_size": 2165,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/view/categories.php",
+			"settings":
+			{
+				"buffer_size": 4812,
 				"line_ending": "Windows"
 			}
 		},
@@ -155,7 +179,31 @@
 			"file": "src/helpers/utils.php",
 			"settings":
 			{
-				"buffer_size": 3960,
+				"buffer_size": 5312,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/view/add_post.php",
+			"settings":
+			{
+				"buffer_size": 1067,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/config/create_table.php",
+			"settings":
+			{
+				"buffer_size": 2055,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "readme.md",
+			"settings":
+			{
+				"buffer_size": 925,
 				"line_ending": "Windows"
 			}
 		}
@@ -184,9 +232,14 @@
 	},
 	"file_history":
 	[
-		"/C/xampp/htdocs/myblog1/src/view/login.php",
-		"/C/xampp/htdocs/myblog1/src/view/common/header.html",
+		"/C/xampp/htdocs/myblog1/src/helpers/utils.php",
+		"/C/xampp/htdocs/myblog1/src/view/delete_post.php",
+		"/C/xampp/htdocs/myblog1/src/view/edit_post.php",
+		"/C/xampp/htdocs/myblog1/src/view/logout.php",
 		"/C/xampp/htdocs/myblog1/src/config/create_table.php",
+		"/C/xampp/htdocs/myblog1/src/view/common/footer.html",
+		"/C/xampp/htdocs/myblog1/src/view/common/header.html",
+		"/C/xampp/htdocs/myblog1/src/view/login.php",
 		"/C/xampp/htdocs/myblog1/Write Up.pdf",
 		"/C/xampp/htdocs/myblog1/Write Up.docx",
 		"/C/xampp/htdocs/phpmysql/chap2/form.html",
@@ -208,17 +261,13 @@
 		"/C/xampp/htdocs/drupal/sites/all/modules/custom/annotate/annotate.admin.inc",
 		"/C/xampp/htdocs/drupal/sites/all/modules/custom/annotate/annotate.module",
 		"/C/Users/Ken/AppData/Roaming/Sublime Text 2/Packages/User/Plain text.sublime-settings",
-		"/C/xampp/htdocs/myblog1/src/helpers/utils.php",
 		"/C/Users/Ken/Downloads/drupal7_common_modules/drupal7_common_modules/helloworld_d7/helloworld_d7_api.inc",
-		"/C/xampp/htdocs/myblog1/src/view/delete_post.php",
-		"/C/xampp/htdocs/myblog1/src/view/edit_post.php",
 		"/C/xampp/htdocs/myblog1/src/view/add_post.php",
 		"/C/Users/Ken/Downloads/drupal7_common_modules/drupal7_common_modules/helloworld_d7/helloworld_d7.module",
 		"/C/Users/Ken/Downloads/drupal7_common_modules/drupal7_common_modules/helloworld_d7/helloworld_d7.info",
 		"/C/xampp/htdocs/drupal/sites/default/settings.php",
 		"/C/xampp/htdocs/drupal/sites/default/default.settings.php",
 		"/C/xampp/htdocs/myblog1/src/config/mysql_connect.php",
-		"/C/xampp/htdocs/myblog1/src/view/common/footer.html",
 		"/C/Users/Ken/Desktop/bootstrap-3.3.6/README.md",
 		"/C/xampp/htdocs/phpmysql/chap2/handle_form.php",
 		"/C/xampp/htdocs/phpmysql/chap2/sorting.php",
@@ -236,7 +285,6 @@
 		"/C/xampp/htdocs/demo/chap13/add_quote.php",
 		"/C/xampp/htdocs/demo/chap13/view_quotes.php",
 		"/C/xampp/htdocs/myblog1/src/config/config.php",
-		"/C/xampp/htdocs/myblog1/src/view/logout.php",
 		"/C/xampp/htdocs/demo/chap13/create_db.php",
 		"/C/xampp/htdocs/demo/chap12/create_table.php",
 		"/C/xampp/htdocs/demo/chap12/edit_entry.php",
@@ -329,6 +377,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"close",
+			"num",
+			"password_",
 			"}\n",
 			"add_user",
 			"page_mode",
@@ -372,7 +423,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 8,
 			"sheets":
 			[
 				{
@@ -380,15 +431,15 @@
 					"file": "src/view/home.php",
 					"settings":
 					{
-						"buffer_size": 1700,
+						"buffer_size": 1869,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								251,
-								251
+								839,
+								839
 							]
 						],
 						"settings":
@@ -397,52 +448,25 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 281.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "src/config/create_table.php",
-					"settings":
-					{
-						"buffer_size": 1990,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1536,
-								1536
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 83.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "src/view/register.php",
 					"settings":
 					{
-						"buffer_size": 3903,
+						"buffer_size": 4650,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3888,
-								2020
+								2305,
+								2496
 							]
 						],
 						"settings":
@@ -451,25 +475,25 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1220.0,
+						"translation.y": 1033.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "src/helpers/utils.php",
+					"buffer": 2,
+					"file": "src/view/login.php",
 					"settings":
 					{
-						"buffer_size": 3960,
+						"buffer_size": 3218,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2364,
-								2537
+								3082,
+								3082
 							]
 						],
 						"settings":
@@ -478,7 +502,167 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1493.0,
+						"translation.y": 1846.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/view/common/header.html",
+					"settings":
+					{
+						"buffer_size": 2165,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1577,
+								1577
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 554.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/view/categories.php",
+					"settings":
+					{
+						"buffer_size": 4812,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								530,
+								530
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 27.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/helpers/utils.php",
+					"settings":
+					{
+						"buffer_size": 5312,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2024,
+								2024
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1345.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/view/add_post.php",
+					"settings":
+					{
+						"buffer_size": 1067,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								337,
+								337
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 56.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "src/config/create_table.php",
+					"settings":
+					{
+						"buffer_size": 2055,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1741,
+								1741
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 636.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "readme.md",
+					"settings":
+					{
+						"buffer_size": 925,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								541,
+								541
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown/Markdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 148.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
