@@ -68,6 +68,31 @@ function validate_exists_error($var_array) {
 
 }
 
+function available_categories() {
+	/* This script displays available categories.*/
+
+	global $dbc;
+
+	// Define the query:
+	$query = "SELECT cat_id, cat_name FROM categories";
+	if ($r = mysqli_query($dbc, $query)) {
+		while ($row = mysqli_fetch_array($r, MYSQL_ASSOC)) {
+			$cat_list[$row['cat_id']] = $row['cat_name'];
+		}
+		if (isset($cat_list)) {
+			return $cat_list;
+		} else {
+			return FALSE;
+		}
+		
+	} else {
+		// Query did not run
+		echo '<p class="alert alert-warning">Could not retrieve categories because:<br />' . mysqli_error($dbc) . '.</p>
+		<p>The query being run was: ' . $query . '</p>';
+		return FALSE;
+	}
+}
+
 function handle_bp ($action) {
 	/* This script handles blog post form based on whether $action is:
 	- 'add'
@@ -86,13 +111,14 @@ function handle_bp ($action) {
 	// Prepare the values for storing
 	$title = mysqli_real_escape_string($dbc, trim(strip_tags($_POST['title'])));
 	$post = mysqli_real_escape_string($dbc, base64_encode($_POST['post']));
+	$cat_id = $_POST['cat_id'];
 
 
 	// modify database here:
 
 	if ($action == 'add') { // 'INSERT' command
 
-		$query = "INSERT INTO blog_post (title, post) VALUES ('$title', '$post')";
+		$query = "INSERT INTO blog_post (title, post, author_id, cat_id) VALUES ('$title', '$post', '{$_SESSION['author_id']}', '$cat_id')";
 		
 	} else { // 'UPDATE' command
 
@@ -127,14 +153,24 @@ function display_bp($action, $title='', $post='') {
 		$btn_type = 'btn-warning';
 		$btn_text = 'Update!';
 	} else {
-		print 'error in display_bp. only add or update actions allowed';
+		echo 'error in display_bp. only add or update actions allowed';
 	}
 
-	print '
+	// Find available categories
+	$cat_list = available_categories();
+
+	echo '
 		<form role="form" action="'. htmlentities($_SERVER['PHP_SELF']) .'" method="post">
 			<div class="well form-group blog-post">
 				<p><h3>Title</h3> <input type="text" name="title" class="form-control" value="' . htmlentities($title) . '" required autofocus></p>
 				<p><h3>Post</h3> <textarea name="post" class="form-control ckeditor" rows="10" required>' . base64_decode($post) . '</textarea></p>
+				<p><h3>Select Category:</h3>
+					<select class="form-control" name="cat_id">';
+					foreach ($cat_list as $cat_id => $cat_name) {
+						echo "<option value=\"$cat_id\">$cat_name</option>";
+					}
+	echo '</select>
+				</p>
 				<hr>
 				<p class="text-center"><button type="submit" class="btn ' . $btn_type . '" name="submit">' . $btn_text . '</button></p>';
 
@@ -144,7 +180,7 @@ function display_bp($action, $title='', $post='') {
 		print '<input type="hidden" name="post_id" value="' . $_POST['post_id'] . '" />';
 	}
 
-	print '</form>';
+	print '</div></form>';
 
 }
 

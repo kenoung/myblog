@@ -47,8 +47,10 @@ You do not need to edit this script. */
 			date_entered TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 			cat_id INT UNSIGNED NOT NULL,
 			PRIMARY KEY (post_id),
-			FOREIGN KEY (author_id) REFERENCES authors(author_id),
-			FOREIGN KEY (cat_id) REFERENCES categories(cat_id))';
+			FOREIGN KEY (author_id) REFERENCES authors(author_id) 
+			ON DELETE CASCADE,
+			FOREIGN KEY (cat_id) REFERENCES categories(cat_id) 
+			ON DELETE CASCADE)';
 
 		// Execute the query
 		if (@mysql_query($query, $dbc)) {

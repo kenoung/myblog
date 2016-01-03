@@ -13,6 +13,10 @@ Note: Not sure if it's an issue with the webhost, but sometimes edits, deletes a
 1. Use src/config/db_setup.php to set up your database and tables.
 2. Add your MySQL credentials to mysql_connect.php.  
 
+## Future Updates
+- add new options on sorting/viewing by category/date on homepage
+- add a default category so posts can be reverted to default cat instead of deleted
+
 ## Release Notes
 - <del>files to create db</del> done
 - <del>cover page</del> done
@@ -22,6 +26,6 @@ Note: Not sure if it's an issue with the webhost, but sometimes edits, deletes a
 - <del>delete_posts</del> done
 - <del>edit_posts</del> done
 - <del>touch up site design</del> done
-- allow for more user accounts/registration page NOT DONE
-- implement categories NOT DONE
-- paragraphing currently not supported
+- <del> allow for more user accounts/registration page</del> done
+- <del>implement categories</del> done
+

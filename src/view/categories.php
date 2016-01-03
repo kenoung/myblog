@@ -11,7 +11,9 @@ check_access();
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 	// Handle the form
 	if (isset($_GET['cat_id']) && is_numeric($_GET['cat_id']) && ($_GET['cat_id'] > 0)) {
-
+		// Need database connection
+		include_once("../config/mysql_connect.php");
+		
 		// Define the query:
 		$query = "DELETE FROM categories WHERE cat_id={$_GET['cat_id']} LIMIT 1";
 		$r = mysqli_query($dbc, $query); // Execute the query
@@ -24,10 +26,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 		} else {
 
 			print '<div class="alert alert-danger">
-			<p>Could not delete the blog post because:<br>' . mysqli_error($dbc) . '.</p>
+			<p>Could not delete the category because:<br>' . mysqli_error($dbc) . '.</p>
 			<p>The query being run was ' . $query . '</p></div>';
 
 		}
+
+	} 
 
 }
 
@@ -169,4 +173,4 @@ if ($r = mysqli_query($dbc,$query)) {
 include('common/footer.html');
 
 
-
+?>

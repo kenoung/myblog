@@ -21,8 +21,11 @@ if (is_administrator()) {
 // Connect to database
 include("../config/mysql_connect.php");
 
+// Categories
+$cat_list = available_categories();
+
 // Define the query:
-$query = 'SELECT post_id, title, post, date_entered FROM blog_post ORDER BY date_entered DESC';
+$query = 'SELECT post_id, title, post, date_entered, cat_id FROM blog_post ORDER BY date_entered DESC';
 
 // Run the query:
 if ($r = mysqli_query($dbc,$query)) {
@@ -30,12 +33,15 @@ if ($r = mysqli_query($dbc,$query)) {
 	// Retrieve the returned records:
 	while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
 
+		// Find category name
+		$cat_name = $cat_list[$row['cat_id']];
+
 		// print the record:
 		print "<div class=\"well\"   id=\"{$row['post_id']}\">
 
 		<div class=\"text-center post-title\">
 		<h2><strong>".htmlentities($row['title'])."</strong></h2>
-		posted {$row['date_entered']}
+		posted {$row['date_entered']} in <strong>$cat_name</strong>
 		</div>
 
 		<div class=\"blog-post\">".base64_decode($row['post'])."</div>

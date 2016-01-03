@@ -8,6 +8,10 @@ include('common/header.html');
 // Must sign in for access:
 check_access('School', 'Computing');
 
+// Need the database connection
+// include(MYSQL); - use this only if you changed the path in config.php
+include("../config/mysql_connect.php");
+
 // Check for a form submission:
 if ($_SERVER['REQUEST_METHOD'] == 'POST') { // Handle the form
 
@@ -18,9 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // Handle the form
 
 	} elseif (!empty($_POST['title']) && !empty($_POST['post'])) {
 
-		// Need the database connection
-		// include(MYSQL); - use this only if you changed the path in config.php
-		include("../config/mysql_connect.php");
+
 
 		handle_bp('add');
 
