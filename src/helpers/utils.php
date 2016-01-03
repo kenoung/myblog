@@ -5,23 +5,41 @@
 #########################
 
 function is_administrator($name = 'School', $value = 'Computing') {
-	// This function checks if the user is an administrator.
-	// This function takes two optional values.
-	// This function returns a Boolean value.
+	// This function checks if the user is an author.
+	// Check for user_id in $_SESSION
+	// Takes in two optional inputs (relic of previous cookie implementation)
 
-	// Check for the cookie and check it's value
-	if (isset($_COOKIE[$name]) && ($_COOKIE[$name] == $value)) {
-		return true;
+	if (isset($_SESSION['author_id'])) {
+		return TRUE;
 	} else {
-		return false;
+		return FALSE;
 	}
+
 } // End of is_administrator() function.
 
 function check_access($name = NULL, $value = NULL) {
 	// This script takes no inputs. Checks if user has access rights to the page
 	if (!is_administrator($name, $value)) {
+		switch (basename($_SERVER['PHP_SELF'])) { 
+			// Check current page:
+			case 'add_post.php':
+				$action = 'add a post';
+				break;
+			case 'delete_post.php':
+				$action = 'delete a post';
+				break;
+			case 'edit_post.php':
+				$action = 'edit a post';
+				break;
+			case 'categories.php':
+				$action = 'manage categories';
+				break;
+			default:
+				$action = 'have admin rights';
+		}
+
 		print '<div class="well"><h2>Access Denied!</h2>
-		<p class="lead">Please <a href="login.php">log in</a> if you want to add a post.</p>';
+		<p class="lead">Please <a href="login.php">log in</a> if you want to '. $action .'.</p>';
 		include('common/footer.html');
 		exit();
 	}

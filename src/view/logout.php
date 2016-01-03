@@ -1,13 +1,15 @@
 <?php // Logout Script
 
-// Destroy the cookie if it exists
-if (isset($_COOKIE['School'])) {
-	setcookie('School', FALSE, time()-300);
-}
-
 // Define a page title and include the header:
 define('TITLE', 'Logout');
 include('common/header.html');
+
+// Destroy the session if it exists
+if (isset($_SESSION['first_name'])) {
+	$_SESSION = array(); // Destroy the variables
+	session_destroy(); // Destroy the session itself.
+	setcookie(session_name(), '', time()-3600); // Destroy the cookie
+}
 
 // Print a message:
 print '<div class="well">

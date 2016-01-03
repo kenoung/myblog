@@ -57,7 +57,7 @@ if ($r = mysqli_query($dbc,$query)) {
 
 	} // End of while loop.
 } else { // Query didn't run
-	print '<p class="error">Could not retrieve the data because:<br />' . mysqli_error($dbc) . '.</p>
+	print '<p class="alert alert-warning">Could not retrieve the data because:<br />' . mysqli_error($dbc) . '.</p>
 	<p>The query being run was: ' . $query . '</p>';
 
 } // End of query IF.

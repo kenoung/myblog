@@ -441,16 +441,17 @@
 						"selection":
 						[
 							[
-								1479,
-								1479
+								3888,
+								2020
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 712.0,
+						"translation.y": 1220.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

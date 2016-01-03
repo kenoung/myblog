@@ -1,5 +1,8 @@
 <?php
 
+ob_start();
+session_start();
+
 // include helper functions
 include("../config/config.php");
 include("../helpers/utils.php");
@@ -50,6 +53,8 @@ include("../helpers/utils.php");
 							// Allow add post
 
 							print '<li><a href="add_post.php"><span class="glyphicon glyphicon-pencil"></span> Add Post</a></li>';
+
+							print '<li><a href="categories.php"><span class="glyphicon glyphicon-tag"></span> Categories</a></li>';
 
 							// Allow log out
 							print "\n\t\t\t\t\t\t".'<li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>'."\n";

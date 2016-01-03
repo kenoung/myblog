@@ -6,12 +6,12 @@ You do not need to edit this script. */
 
 		// Create authors table
 		$query = 'CREATE TABLE authors (
-			author_id INT UNSIGNED NOT NULL DEFAULT 1,
+			author_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
 			first_name VARCHAR(40) NOT NULL,
 			last_name VARCHAR(40) NOT NULL,
 			email VARCHAR(60) NOT NULL,
-			password CHAR(40) NOT NULL,
-			registration_date DATETIME NOT NULL,
+			password CHAR(255) NOT NULL, 
+			registration_date DATETIME NOT NULL DEFAULT NOW(),
 			PRIMARY KEY (author_id),
 			UNIQUE KEY (email),
 			INDEX login(email, password))';

@@ -39,12 +39,28 @@ if (is_administrator()) {
 		echo '<div class="alert alert-warning lead"><p>Your passwords do not match.</p>
 		<p>Please return to the previous page and fill out your passwords again.</p></div>';
 	} else {
+
+		foreach ($_POST as $key => $value) {
+			if ($key == 'password') {
+				$password = mysqli_real_escape_string($dbc, password_hash($_POST['password'], PASSWORD_DEFAULT));
+			} else {
+				$$key = mysqli_real_escape_string($dbc, $value);
+			}
+		}
+
 		// Check if email is already registered
-		$email = $_POST['email'];
 		$query = "SELECT author_id FROM authors WHERE email='$email'";
 		if ($r = mysqli_query($dbc, $query)) {
 			if (mysqli_num_rows($r) == 0) {
 				// Create new author
+				$query = "INSERT INTO authors (first_name, last_name, email, password) VALUES ('$first_name',  '$last_name', '$email', '". $password ."')";
+				if ($r = mysqli_query($dbc, $query)) {
+					echo '<div class="alert alert-success">Your account has been successfully created. You can now login <a href="login.php">here</a>.';
+				} else {
+					print '<div class="alert alert-danger">
+					<p>Could not submit your post because:<br />' . mysqli_error($dbc) .'.</p> 
+					<p>The query being run was ' . $query . '</p></div>';
+				}
 			} else {
 				// Print error message
 				echo '<div class="alert alert-warning lead"><p>This email has already been registered.</p>
