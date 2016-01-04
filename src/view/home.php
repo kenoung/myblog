@@ -25,7 +25,13 @@ include("../config/mysql_connect.php");
 $cat_list = available_categories();
 
 // Define the query:
-$query = 'SELECT post_id, title, post, date_entered, cat_id FROM blog_post ORDER BY date_entered DESC';
+if (isset($_GET['cat_id']) && $_GET['cat_id']) {
+	$query = "SELECT post_id, title, post, date_entered, cat_id FROM blog_post WHERE cat_id = {$_GET['cat_id']} ORDER BY date_entered DESC";
+} elseif (isset($_GET['cat_id']) && $_GET['cat_id'] == 0) {
+	$query = "SELECT post_id, title, post, date_entered, cat_id FROM blog_post WHERE cat_id IS NULL ORDER BY date_entered DESC";
+} else {
+	$query = 'SELECT post_id, title, post, date_entered, cat_id FROM blog_post ORDER BY date_entered DESC';
+}
 
 // Run the query:
 if ($r = mysqli_query($dbc,$query)) {

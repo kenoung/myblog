@@ -119,6 +119,7 @@ if ($r = mysqli_query($dbc,$query)) {
 			        <th class="text-center">Category Name</th>
 			        <th class="text-center">No. of Posts</th>
 			        <th class="text-center">Delete Category</th>
+			        <th class="text-center">Related Posts</th>
 		      	</tr>
 		    </thead>
 		    <tbody>';
@@ -144,6 +145,7 @@ if ($r = mysqli_query($dbc,$query)) {
 			        <td>'.$row['cat_name'].'</td>
 			        <td>'.$post_count.'</td>
 			        <td>'."<a href=\"categories.php?cat_id={$row['cat_id']}\" class=\"btn btn-default\">Delete</a>".'</td>
+			        <td>'."<a href=\"home.php?cat_id={$row['cat_id']}\" class=\"btn btn-default\">View</a>".'</td>
 			    </tr>
 			 ';
 
@@ -174,8 +176,10 @@ if ($r = mysqli_query($dbc,$query)) {
 		        <td>Uncategorized</td>
 		        <td>'.$post_count.'</td>
 		        <td>'."<button class=\"btn btn-default\" disabled>Delete</button>".'</td>
+		        <td>'."<a href=\"home.php?cat_id=0\" class=\"btn btn-default\">View</button>".'</td>
 		    </tr>
 		</tbody>
+		<p class="text-center text-muted">Deleting a category will send all current posts in that category to "Uncategorized".</p>
 		</table>
 	</div>
 	<div class="col-sm-3"></div>
