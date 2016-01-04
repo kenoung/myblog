@@ -45,12 +45,12 @@ You do not need to edit this script. */
 			title VARCHAR(100) NOT NULL,
 			post TEXT NOT NULL,
 			date_entered TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-			cat_id INT UNSIGNED NOT NULL,
+			cat_id INT UNSIGNED DEFAULT NULL,
 			PRIMARY KEY (post_id),
 			FOREIGN KEY (author_id) REFERENCES authors(author_id) 
 			ON DELETE CASCADE,
 			FOREIGN KEY (cat_id) REFERENCES categories(cat_id) 
-			ON DELETE CASCADE)';
+			ON DELETE SET NULL)';
 
 		// Execute the query
 		if (@mysql_query($query, $dbc)) {

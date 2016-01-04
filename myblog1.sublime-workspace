@@ -423,7 +423,7 @@
 	"groups":
 	[
 		{
-			"selected": 8,
+			"selected": 6,
 			"sheets":
 			[
 				{
@@ -552,7 +552,8 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 27.0,
@@ -609,7 +610,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 56.0,
+						"translation.y": 201.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -662,7 +663,7 @@
 							"syntax": "Packages/Markdown/Markdown.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 148.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

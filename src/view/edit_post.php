@@ -24,14 +24,15 @@ include("../config/mysql_connect.php");
 if (isset($_GET['post_id']) && is_numeric($_GET['post_id']) && ($_GET['post_id'] > 0)) { // Display entry in a form
 
 	// Define the query.
-	$query = "SELECT title, post FROM blog_post WHERE post_id={$_GET['post_id']}";
+	$query = "SELECT title, post, cat_id FROM blog_post WHERE post_id={$_GET['post_id']}";
 	if ($r = mysqli_query($dbc,$query)) { // Run the query
 		$row = mysqli_fetch_array($r,MYSQLI_ASSOC); // Retrieve the information
 
 		// Make the form:
 		$title = $row['title'];
 		$post = $row['post'];
-		display_bp('update', $row['title'], $row['post']);
+		$cat_id = $row['cat_id'];
+		display_bp('update', $title, $post, $cat_id);
 
 	} else { // Couldn't get the information
 
@@ -49,6 +50,7 @@ if (isset($_GET['post_id']) && is_numeric($_GET['post_id']) && ($_GET['post_id']
 		// prepare the values for storing:
 		$title = mysqli_real_escape_string($dbc, trim(strip_tags($_POST['title'])));
 		$post = mysqli_real_escape_string($dbc, base64_encode($_POST['post']));
+		$cat_id = $_POST['cat_id'];
 
 	} else {
 		print '<div class="alert alert-danger"><p>Please make sure you have filled out all the fields.</p></div>';
@@ -58,7 +60,7 @@ if (isset($_GET['post_id']) && is_numeric($_GET['post_id']) && ($_GET['post_id']
 	if (!$problem) {
 
 		handle_bp('update');
-		display_bp('update', $title, $post);
+		display_bp('update', $title, $post, $cat_id);
 
 	} // No problem
 

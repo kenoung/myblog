@@ -106,32 +106,27 @@ $query = 'SELECT cat_id, cat_name FROM categories ORDER BY cat_id';
 // Run the query:
 if ($r = mysqli_query($dbc,$query)) {
 
-	if (mysqli_num_rows($r) == 0) {
-		echo '<div class="alert alert-warning lead text-center">No categories have been created.</div>';
+	$no = 1; // Instantiate row count
 
-	} else {
+	// Start the table
+	echo '<div class="row">
+	<div class="col-sm-3"></div>
+	<div class="well col-sm-6">
+		<table class="table text-center">
+		    <thead>
+		    	<tr>
+			        <th class="text-center">No.</th>
+			        <th class="text-center">Category Name</th>
+			        <th class="text-center">No. of Posts</th>
+			        <th class="text-center">Delete Category</th>
+		      	</tr>
+		    </thead>
+		    <tbody>';
 
-		// Start the table
-		echo '<div class="row">
-		<div class="col-sm-3"></div>
-		<div class="well col-sm-6">
-			<table class="table text-center">
-			    <thead>
-			    	<tr>
-				        <th class="text-center">No.</th>
-				        <th class="text-center">Category Name</th>
-				        <th class="text-center">No. of Posts</th>
-				        <th class="text-center">Delete Category</th>
-			      	</tr>
-			    </thead>
-			    <tbody>';
-
-		$no = 0;
+	if (mysqli_num_rows($r) != 0) {
 
 		// Retrieve the returned records:
 		while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
-
-			$no++; // increment counter
 
 			// Find number of posts in this category
 			$query2 = "SELECT post_id FROM blog_post WHERE cat_id={$row['cat_id']}";
@@ -152,16 +147,40 @@ if ($r = mysqli_query($dbc,$query)) {
 			    </tr>
 			 ';
 
+			$no++; // increment counter
+
+
 		} // End of while loop.
 
-		// End the table
-		echo '</tbody>
-			</table>
-		</div>
-		<div class="col-sm-3"></div>
-		</div>';
 
+	} else {
+		echo '<div class="alert alert-warning lead text-center">No categories have been created.</div>';
 	}
+
+	
+	// Find number of uncategorized posts
+	$query2 = "SELECT post_id FROM blog_post WHERE cat_id IS NULL";
+	if ($r2 = mysqli_query($dbc,$query2)) {
+		$post_count = mysqli_num_rows($r2);
+	} else {
+		echo '<p class="alert alert-warning">Could not retrieve the data because:<br>' . mysqli_error($dbc) . '.</p>
+		<p>The query being run was: ' . $query2 . '</p>';
+	}
+
+	// End the table
+	echo '
+			<tr>
+		        <td>'.$no.'</td>
+		        <td>Uncategorized</td>
+		        <td>'.$post_count.'</td>
+		        <td>'."<button class=\"btn btn-default\" disabled>Delete</button>".'</td>
+		    </tr>
+		</tbody>
+		</table>
+	</div>
+	<div class="col-sm-3"></div>
+	</div>';
+
 } else { // Query didn't run
 	print '<p class="alert alert-warning">Could not retrieve the data because:<br />' . mysqli_error($dbc) . '.</p>
 	<p>The query being run was: ' . $query . '</p>';

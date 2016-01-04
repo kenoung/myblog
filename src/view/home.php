@@ -34,7 +34,11 @@ if ($r = mysqli_query($dbc,$query)) {
 	while ($row = mysqli_fetch_array($r, MYSQLI_ASSOC)) {
 
 		// Find category name
-		$cat_name = $cat_list[$row['cat_id']];
+		if ($row['cat_id']) {
+			$cat_name = $cat_list[$row['cat_id']];
+		} else {
+			$cat_name = 'Uncategorized';
+		}
 
 		// print the record:
 		print "<div class=\"well\"   id=\"{$row['post_id']}\">

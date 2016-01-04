@@ -111,19 +111,35 @@ function handle_bp ($action) {
 	// Prepare the values for storing
 	$title = mysqli_real_escape_string($dbc, trim(strip_tags($_POST['title'])));
 	$post = mysqli_real_escape_string($dbc, base64_encode($_POST['post']));
-	$cat_id = $_POST['cat_id'];
 
+	if ($_POST['cat_id']) {
+		$cat_id = mysqli_real_escape_string($dbc,$_POST['cat_id']);
+	} else {
+		$cat_id = NULL;
+	}
 
 	// modify database here:
 
-	if ($action == 'add') { // 'INSERT' command
+	if ($cat_id) {
+		if ($action == 'add') { // 'INSERT' command
 
-		$query = "INSERT INTO blog_post (title, post, author_id, cat_id) VALUES ('$title', '$post', '{$_SESSION['author_id']}', '$cat_id')";
-		
-	} else { // 'UPDATE' command
+			$query = "INSERT INTO blog_post (title, post, author_id, cat_id) VALUES ('$title', '$post', '{$_SESSION['author_id']}', '$cat_id')";
+			
+		} else { // 'UPDATE' command
 
-		$query = "UPDATE blog_post SET title='$title', post='$post' WHERE post_id={$_POST['post_id']}";
-		
+			$query = "UPDATE blog_post SET title='$title', post='$post', cat_id='$cat_id' WHERE post_id={$_POST['post_id']}";
+			
+		}
+	} else {
+		if ($action == 'add') { // 'INSERT' command
+
+			$query = "INSERT INTO blog_post (title, post, author_id) VALUES ('$title', '$post', '{$_SESSION['author_id']}')";
+			
+		} else { // 'UPDATE' command
+
+			$query = "UPDATE blog_post SET title='$title', post='$post' WHERE post_id={$_POST['post_id']}";
+			
+		}
 	}
 
 	if ($r = mysqli_query($dbc, $query)) { // perform query
@@ -140,7 +156,7 @@ function handle_bp ($action) {
 
 } // end of handle_bp function
 
-function display_bp($action, $title='', $post='') { 
+function display_bp($action, $title='', $post='', $cat_id=NULL) { 
 	// Displays blog post submission/update form 
 	// Takes one $action arguments: 'update' or 'add'
 	// Takes two additional arguments to display as placeholders if 'update' selected
@@ -165,11 +181,17 @@ function display_bp($action, $title='', $post='') {
 				<p><h3>Title</h3> <input type="text" name="title" class="form-control" value="' . htmlentities($title) . '" required autofocus></p>
 				<p><h3>Post</h3> <textarea name="post" class="form-control ckeditor" rows="10" required>' . base64_decode($post) . '</textarea></p>
 				<p><h3>Select Category:</h3>
-					<select class="form-control" name="cat_id">';
-					foreach ($cat_list as $cat_id => $cat_name) {
-						echo "<option value=\"$cat_id\">$cat_name</option>";
+					<select class="form-control" name="cat_id">
+						<option value="0">Uncategorized</option>';
+					foreach ($cat_list as $id => $name) {
+						echo "\n\t\t\t\t\t\t<option value=\"$id\" ";
+						if ($id == $cat_id) {
+							echo 'selected="selected"';
+						}
+						echo ">$name</option>";
 					}
-	echo '</select>
+					echo '
+					</select>
 				</p>
 				<hr>
 				<p class="text-center"><button type="submit" class="btn ' . $btn_type . '" name="submit">' . $btn_text . '</button></p>';
