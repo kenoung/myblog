@@ -137,7 +137,7 @@ function handle_bp ($action) {
 			
 		} else { // 'UPDATE' command
 
-			$query = "UPDATE blog_post SET title='$title', post='$post' WHERE post_id={$_POST['post_id']}";
+			$query = "UPDATE blog_post SET title='$title', post='$post', cat_id = NULL WHERE post_id={$_POST['post_id']}";
 			
 		}
 	}
