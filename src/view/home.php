@@ -6,7 +6,36 @@
 define('TITLE', 'Home Page');
 include('common/header.html');
 
-// print '<h2>Latest Posts</h2>';
+// Connect to database
+include("../config/mysql_connect.php");
+
+// Categories
+$cat_list = available_categories();
+
+// View by Categories 
+echo '
+<form class="form-inline" role="form" action="home.php" method="get">
+	<div class="form-group">
+	<label class="lead" for="cat_id">View By Category: </label>
+	<select class="form-control" name="cat_id" id="cat_id" onchange="this.form.submit()">
+	<option value="-1">All</option>
+	<option value="0"';
+if (isset($_GET['cat_id']) && $_GET['cat_id'] == 0) {
+		echo ' selected="selected"';
+	}
+echo '>Uncategorized</option>';
+
+foreach ($cat_list as $cat_id => $cat_name) {
+	echo "<option value=\"$cat_id\"";
+	if (isset($_GET['cat_id']) && $_GET['cat_id'] == $cat_id) {
+		echo ' selected="selected"';
+	}
+	echo ">$cat_name</option>";
+}
+
+echo '</select></div>
+<noscript><button class="btn btn-default" type="submit">Submit</button></noscript>
+</form>';
 
 // Allow authors to add post
 if (is_administrator()) {
@@ -17,15 +46,8 @@ if (is_administrator()) {
 	';
 }
 
-
-// Connect to database
-include("../config/mysql_connect.php");
-
-// Categories
-$cat_list = available_categories();
-
 // Define the query:
-if (isset($_GET['cat_id']) && $_GET['cat_id']) {
+if (isset($_GET['cat_id']) && $_GET['cat_id'] > 0) {
 	$query = "SELECT post_id, title, post, date_entered, cat_id FROM blog_post WHERE cat_id = {$_GET['cat_id']} ORDER BY date_entered DESC";
 } elseif (isset($_GET['cat_id']) && $_GET['cat_id'] == 0) {
 	$query = "SELECT post_id, title, post, date_entered, cat_id FROM blog_post WHERE cat_id IS NULL ORDER BY date_entered DESC";
