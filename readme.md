@@ -7,6 +7,7 @@
 **Matric. Number:** A0139388M
 
 Link to demo: http://demoblog.netne.net/
+Note: Webhost for this demo site only supports MyISAM, so foreign key constraints do not work ('on delete set null' for categories does not work)
 
 
 ## Setup
