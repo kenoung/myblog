@@ -7,7 +7,7 @@
 **Matric. Number:** A0139388M
 
 Link to demo: http://demoblog.netne.net/
-Note: Not sure if it's an issue with the webhost, but sometimes edits, deletes and new posts take longer to effect.
+
 
 ## Setup
 1. Use src/config/db_setup.php to set up your database and tables.
