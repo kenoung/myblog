@@ -144,11 +144,16 @@ function handle_bp ($action) {
 
 	if ($r = mysqli_query($dbc, $query)) { // perform query
 
-		print '<div class="alert alert-success"><p>Your blog post was submitted. View your post <a href="home.php">here</a></p></div>';
+		echo '<div class="alert alert-success"><p>Your blog post was submitted. View your post <a href="home.php';
+		if (isset($_POST['post_id'])) {
+			$post_id = $_POST['post_id'];
+			echo "#$post_id";
+		}
+		echo '">here</a></p></div>';
 
 	} else { // Print error message
 
-		print '<div class="alert alert-danger">
+		echo '<div class="alert alert-danger">
 		<p>Could not submit your post because:<br />' . mysqli_error($dbc) .'.</p> 
 		<p>The query being run was ' . $query . '</p></div>';
 

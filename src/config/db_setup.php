@@ -1,9 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Database Setup</title>
+</head>
+<body>
+	<h1>Set Up Your Database</h1>
+	<p>This script can only be used if you have full access. Otherwise, you need to create your database manually and run the SQL queries in create_table.php.</p>
 <?php // Set-up your database
 /* Please update mysql_connect.php after running this script */
-
-// Add header
-define('TITLE', 'Database Setup');
-include('../view/common/header.html');
 
 // Check if set-up has been completed before
 
@@ -60,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 					if (@mysql_select_db('myblog', $dbc)) {
 						print '<p>The database has been selected!</p>';
 					} else {
-						print '<p style="color:red; ">Could not select the database because:<br />' . mysql_error($dbc) . '.</p>';
+						print '<p>Could not select the database because:<br />' . mysql_error($dbc) . '.</p>';
 					}
 
 					require_once("create_table.php");
